@@ -102,7 +102,12 @@ namespace ExpendedoraConsola
         static void ExtraerLata(Expendedora expendedora)
         {
             Console.WriteLine("***BEBIDAS***");
+            LatasHelpers.AgregarALista(_maquina.Latas);
+            Console.WriteLine(); 
+            
+
             ListarLatas(_maquina);
+
             string codigo = Helpers.PedirTexto(" codigo de bebida a retirar");
             Console.WriteLine(_maquina.TraerLatas().ToString());
            // Console.WriteLine($" por favor el dinero {}");
@@ -116,7 +121,7 @@ namespace ExpendedoraConsola
         static void ListarLatas(Expendedora expendedora)
         {
             Console.WriteLine("LATAS DE ESTA MAQUINA EXPENDEDORA");
-            if (_maquina.GetCapacidadRestante()!= 0)
+            if (_maquina.GetCapacidadRestante()==0)
             {
                 foreach (Lata l in _maquina.Latas)
                 {

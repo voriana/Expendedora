@@ -10,17 +10,17 @@ namespace ExpendedoraLibreriaClases.Utilidades
     public static class LatasHelpers
     {
         private static List<Lata> _latas = new List<Lata>();
-        public static void AgregarALista()
+        public static void AgregarALista(List<Lata> l)
         {
             Lata l1 = new Lata("F1", "Fanta", "Naranja", 100, 250, 100);
             Lata l2 = new Lata("C1", "Coca-Cola", "Cola", 150, 100, 100);
             Lata l3 = new Lata("C3", "Pepsi", "Cola", 150, 100, 100);
             Lata l4 = new Lata("C1", "Manaos", "Guarana", 95, 100, 100);
 
-            _latas.Add(l1);
-            _latas.Add(l2);
-            _latas.Add(l3);
-            _latas.Add(l4);
+            l.Add(l1);
+            l.Add(l2);
+            l.Add(l3);
+            l.Add(l4);
         }
         public static List<Lata> DevolverLista()
         {

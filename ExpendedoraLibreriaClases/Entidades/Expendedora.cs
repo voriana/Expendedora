@@ -113,7 +113,7 @@ namespace ExpendedoraLibreriaClases.Entidades
         }
         public int GetCapacidadRestante()
         {
-            int Restante = _latas.Count();
+            int Restante = (Capacidad - _latas.Count());
             return Restante;
 
         }
