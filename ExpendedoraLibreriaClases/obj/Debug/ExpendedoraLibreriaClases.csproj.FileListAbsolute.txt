@@ -1,0 +1,6 @@
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraLibreriaClases\bin\Debug\ExpendedoraLibreriaClases.dll
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraLibreriaClases\bin\Debug\ExpendedoraLibreriaClases.pdb
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraLibreriaClases\obj\Debug\ExpendedoraLibreriaClases.csproj.AssemblyReference.cache
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraLibreriaClases\obj\Debug\ExpendedoraLibreriaClases.csproj.CoreCompileInputs.cache
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraLibreriaClases\obj\Debug\ExpendedoraLibreriaClases.dll
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraLibreriaClases\obj\Debug\ExpendedoraLibreriaClases.pdb

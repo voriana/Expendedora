@@ -1,0 +1,10 @@
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\bin\Debug\ExpendedoraConsola.exe.config
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\bin\Debug\ExpendedoraConsola.exe
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\bin\Debug\ExpendedoraConsola.pdb
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\bin\Debug\ExpendedoraLibreriaClases.dll
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\bin\Debug\ExpendedoraLibreriaClases.pdb
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\obj\Debug\ExpendedoraConsola.csproj.AssemblyReference.cache
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\obj\Debug\ExpendedoraConsola.csproj.CoreCompileInputs.cache
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\obj\Debug\ExpendedoraConsola.csproj.CopyComplete
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\obj\Debug\ExpendedoraConsola.exe
+C:\Users\orian\Documents\GitHub\Expendedora\ExpendedoraConsola\obj\Debug\ExpendedoraConsola.pdb
