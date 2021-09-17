@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExpendedoraLibreriaClases.Utilidades;
 
 namespace ExpendedoraLibreriaClases.Entidades
 {
@@ -14,9 +15,14 @@ namespace ExpendedoraLibreriaClases.Entidades
         private double _dinero;
         private bool _encendida;
 
+       
         public Expendedora()
         {
-
+            LatasHelpers.AgregarALista();
+            _latas = LatasHelpers.DevolverLista();
+            _capacidad = Capacidad;
+            _proveedor = "Pepsico";
+            _dinero = 0;
         }
         public Expendedora(string proveedor)
         {
@@ -28,6 +34,8 @@ namespace ExpendedoraLibreriaClases.Entidades
             _proveedor = proveedor;
             _capacidad = capacidad;
             _dinero = dinero;
+
+            
 
         }
         public List<Lata> Latas { get => _latas; }
@@ -42,9 +50,11 @@ namespace ExpendedoraLibreriaClases.Entidades
             }
             set
             {
-                _capacidad = 100;
+                _capacidad =100;
             }
         }
+
+     
         
       
         public double Dinero { get => _dinero; }
@@ -52,44 +62,25 @@ namespace ExpendedoraLibreriaClases.Entidades
 
         public bool AgregarLata(Lata lata)
         {
-            bool flag = true;
-            if(lata== null)
+            bool flag = false;
+           
+                foreach( Lata lata1 in _latas)
+                {
+                    if (lata1.Codigo == lata.Codigo)
+                    {
+                        return flag;
+                    }
+                    
+                }
+            if (GetCapacidadRestante() == 0)
             {
                 flag = false;
             }
             else
             {
-                if (Encendida)
-                {
-                    foreach(Lata l in _latas)
-                    {
-                        // FA 1: El código ya existe
-                        if (l.Codigo == lata.Codigo)
-                        {
-                            flag= false;
-                           
-                        }
-                        
-                    }
-                    //FA 2: La máquina está llena (capacidad insuficiente)
-                    if (_latas.Count()==Capacidad)
-                    {
-                        flag= false;
-                        
-
-                    }
-                    else
-                    {
-                        flag = true;
-                        _latas.Add(lata);
-                    }
-
-                }else
-                {
-                    flag = false;
-                    //LA MAQUINA NO ESTA ENCENDIDA
-                }
-         
+                _latas.Add(lata);
+                
+                flag = true;
             }
             return flag;
         }
@@ -113,7 +104,7 @@ namespace ExpendedoraLibreriaClases.Entidades
         }
         public int GetCapacidadRestante()
         {
-            int Restante = (Capacidad - _latas.Count());
+            int Restante = (Capacidad - _latas.Count()) ;
             return Restante;
 
         }
@@ -132,10 +123,14 @@ namespace ExpendedoraLibreriaClases.Entidades
                 return false;
             }
         }
-        public List<Lata> TraerLatas()
+        public string TraerLatas(List<Lata> l)
         {
-
-            return _latas;
+            string Acumulador = "";
+            foreach(Lata e in l)
+            {
+                Acumulador+= e.ToString()+Environment.NewLine;
+            }
+            return Acumulador;
         }
     }
 }

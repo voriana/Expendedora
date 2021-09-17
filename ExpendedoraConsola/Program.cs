@@ -16,7 +16,7 @@ namespace ExpendedoraConsola
         {
             _consolaActiva = true;
             _maquina = new Expendedora();
-                        
+            _maquina.Capacidad = _maquina.Capacidad;                        
 
 
         }
@@ -26,7 +26,8 @@ namespace ExpendedoraConsola
             
             while (_consolaActiva)
             {
-                Console.WriteLine($"Expendedora de proveedor {_maquina.Proveedor}");
+
+                Console.WriteLine($"Expendedora 3.0");
                 DesplegarMenu();
                 int opcion = Helpers.PedirInt("opcion");
                 switch (opcion)
@@ -88,28 +89,39 @@ namespace ExpendedoraConsola
 
             Lata lata = new Lata(codigo, nombre, sabor, volumen, cantidad);
             precio = lata.Precio;
+            Encender();
 
-            //Agregar la a la lista
-            if (expendedora.AgregarLata(lata))
+            if (!(_maquina.Encendida))
             {
+                Console.WriteLine("La maquina no esta encendida");
+               
+            }
+            else if (expendedora.AgregarLata(lata))
+            //Agregar la a la lista
+            {
+
+                Console.WriteLine(_maquina.Capacidad);
                 Console.WriteLine("Lata agregada");
+                _maquina.Capacidad = (_maquina.Capacidad - lata.Cantidad);
+                Console.WriteLine(_maquina.Capacidad);
+
             }
             else
             {
-                Console.WriteLine("La EXPENDEDORA NO ESTA ENCENDIDA");
+                Console.WriteLine("No se ha podido agregar la lata");
             }
         }
         static void ExtraerLata(Expendedora expendedora)
         {
             Console.WriteLine("***BEBIDAS***");
-            LatasHelpers.AgregarALista(_maquina.Latas);
+            LatasHelpers.AgregarALista();
             Console.WriteLine(); 
             
 
             ListarLatas(_maquina);
 
             string codigo = Helpers.PedirTexto(" codigo de bebida a retirar");
-            Console.WriteLine(_maquina.TraerLatas().ToString());
+            Console.WriteLine(_maquina.TraerLatas(_maquina.Latas));
            // Console.WriteLine($" por favor el dinero {}");
 
         }
@@ -121,12 +133,10 @@ namespace ExpendedoraConsola
         static void ListarLatas(Expendedora expendedora)
         {
             Console.WriteLine("LATAS DE ESTA MAQUINA EXPENDEDORA");
-            if (_maquina.GetCapacidadRestante()==0)
+            
+            if (_maquina.GetCapacidadRestante()!=0)
             {
-                foreach (Lata l in _maquina.Latas)
-                {
-                    Console.WriteLine(l.Listar());
-                }
+                Console.WriteLine(_maquina.TraerLatas(_maquina.Latas));
             }
             else
             {
